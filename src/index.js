@@ -1,6 +1,6 @@
 import Express from "express";
 import cors from "cors";
-// import logger from "./middleware/logger";
+import logger from "./middleware/logger";
 
 //import routes
 import Menu from "./routes/menu";
@@ -16,8 +16,8 @@ app.get("/", (req, res) => {
   return res.status(200).json({ message: "hello and welcome to this api" });
 });
 
-// app.use("/menu", MenuRoute);
+app.use("/menu", Menu);
 
 app.listen(PORT, () => {
-  console.log(`server running on port: http://localhost:${PORT}`);
+  logger.info(`server running on port: http://localhost:${PORT}`);
 });
