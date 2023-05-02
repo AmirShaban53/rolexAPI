@@ -4,6 +4,7 @@ import logger from "./middleware/logger";
 
 //import routes
 import Menu from "./routes/menu";
+import User from "./routes/user";
 import Order from "./routes/order";
 
 const PORT = process.env.PORT || 5000;
@@ -18,6 +19,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/menu", Menu);
+app.use("/users", User);
 app.use("/order", Order);
 
 app.listen(PORT, () => {
