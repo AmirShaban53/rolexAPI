@@ -6,6 +6,7 @@ import logger from "./middleware/logger";
 import Menu from "./routes/menu";
 import User from "./routes/user";
 import Order from "./routes/order";
+import Auth from "./routes/auth";
 
 const PORT = process.env.PORT || 5000;
 
@@ -19,6 +20,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/menu", Menu);
+app.use("/auth", Auth);
 app.use("/users", User);
 app.use("/order", Order);
 
